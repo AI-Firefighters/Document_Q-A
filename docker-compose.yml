@@ -1,0 +1,15 @@
+---
+version: '3'
+ 
+services:
+  documentQA:
+    image: phanideep/documentQA:documentQA
+    container_name: documentQA
+    restart: always        
+    build: 
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8510:8510"
+    volumes:
+      - ./config.toml:/root/.streamlit/config.toml
